@@ -7,34 +7,30 @@ function Root() {
   const [showBlackScreen, setShowBlackScreen] = useState(false);
 
   useEffect(() => {
-    // Muestra la pantalla negra
     setShowBlackScreen(true);
 
-    // Crea un temporizador para ocultar la pantalla negra después de un intervalo
     const timer = setTimeout(() => {
       setShowBlackScreen(false);
-    }, 150); // 500ms para el efecto de pantalla negra
+    }, 150);
 
-    // Limpia el temporizador si el componente se desmonta antes de que se oculte la pantalla negra
     return () => clearTimeout(timer);
   }, [location]);
   return (
-    <div className="w-screen h-screen ">
-      <Header />
+    <div className="w-screen min-h-[100dvh]">
+      <Header locationPath={location.pathname} />
       <div>
         <PageLoading visible={showBlackScreen} variant="l1" />
 
         <Outlet />
+        <footer className="self-center p-10px text-[9px] sm:text-xs font-spiegel fixed bottom-0 z-0 text-[#A09B8C] w-screen flex justify-center">
+          Memory Legends is not endorsed by Riot Games and does not reflect the
+          views or opinions of Riot Games or anyone officially involved in
+          producing or managing Riot Games properties.
+          <br />
+          Riot Games and all associated properties are trademarks or registered
+          trademarks of Riot Games, Inc
+        </footer>
       </div>
-      <footer className="self-center p-10px text-xs font-spiegel absolute bottom-0 z-0 text-[#A09B8C] w-screen flex justify-center">
-        {/* <footer className="self-center p-10px text-xs font-spiegel text-[#A09B8C] flex justify-center"> */}
-        Memory Legends is not endorsed by Riot Games and does not reflect the
-        views or opinions of Riot Games or anyone officially involved in
-        producing or managing Riot Games properties.
-        <br />
-        Riot Games and all associated properties are trademarks or registered
-        trademarks of Riot Games, Inc
-      </footer>
     </div>
   );
 }
