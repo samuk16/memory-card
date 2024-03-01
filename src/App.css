@@ -1,42 +1,68 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.lab1 {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.lab1 input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
 
-@keyframes logo-spin {
-  from {
+.sp1 {
+  transform: rotate(45deg);
+  border: #785A28 solid 3px;
+}
+
+.sp1:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.lab1 input:checked~.sp1:after {
+  display: block;
+}
+
+.lab1 .sp1:after {
+  left: 3px;
+  top: 3px;
+  width: 8px;
+  height: 8px;
+  background-color:#C8AA6E ;
+
+}
+
+.divConcave{
+  clip-path: url(#concaveCorners);
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid #0ac4b7;
+  border-right: 5px solid transparent;
+  box-sizing: border-box;
+  z-index: 10;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+
+  100% {
     transform: rotate(360deg);
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
