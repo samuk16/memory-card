@@ -2,20 +2,24 @@ interface CardProps {
   name: string;
   skinId: string;
   changeSection?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
-function Card({ name, skinId }: CardProps) {
+function Card({ name, skinId, onClick }: CardProps) {
   const size = 200;
   const concaveSize = 33;
   const relativeConcave = concaveSize / size;
   return (
     <div
-      className=""
       style={{
         position: "relative",
         width: `${size}px`,
         height: `300px`,
       }}
+      data-card={name}
+      onClick={
+        onClick && typeof onClick === "function" ? (e) => onClick(e) : undefined
+      }
     >
       <svg width="0" height="0">
         <defs>
@@ -37,14 +41,13 @@ function Card({ name, skinId }: CardProps) {
       </svg>
 
       <div
-        className="testDivConcavo absolute top-0 bg-cover w-200px h-300px"
+        className="divConcave absolute top-0 bg-cover w-200px h-300px "
         style={{
           backgroundImage: `url(https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${name}_${skinId}.jpg)`,
         }}
       />
-      <div className="absolute top-0 dinamic-bg-bgBorderCard-svg w-200px h-300px"></div>
+      <div className="absolute top-0 dinamic-bg-bgBorderCard-svg w-200px h-300px cursor-pointer"></div>
     </div>
   );
 }
-// bg-[url(https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${name}_0.jpg)]
 export { Card };
