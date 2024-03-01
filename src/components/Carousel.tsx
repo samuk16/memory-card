@@ -1,5 +1,15 @@
 import Slider from "react-slick";
 
+function SampleNextArrow() {
+  // const { style } = props;
+  return <div style={{ display: "none", background: "red" }} />;
+}
+
+function SamplePrevArrow() {
+  // const { style } = props;
+  return <div style={{ display: "none", background: "green" }} />;
+}
+
 function CarouselResponsive() {
   const settings = {
     dots: false,
@@ -7,12 +17,17 @@ function CarouselResponsive() {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
     responsive: [
       {
         breakpoint: 1280,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          nextArrow: <SampleNextArrow />,
+          prevArrow: <SamplePrevArrow />,
         },
       },
     ],
@@ -25,7 +40,7 @@ function CarouselResponsive() {
           <a
             href="http://www.leagueoflegends.com/en-us/news/game-updates/patch-13-23-notes/"
             target="_blank"
-            className="group visited:text-[#C8AA6E] no-underline text-[#C8AA6E] mx-2.5"
+            className="group visited:text-[#C8AA6E] no-underline text-[#C8AA6E]"
           >
             <div className="cursor-pointer">
               <div className="dinamic-bg-imgCard3-jpg bg-no-repeat bg-cover bg-center w-350px h-220px border border-[#785A28] border-solid group-hover:border-[#FFEFBD]"></div>
