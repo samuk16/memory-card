@@ -14,7 +14,7 @@ const variants = {
     "3div":
       "borderGradietn flex justify-end items-center dinamic-bg-backgroundBtnBlue-svg bg-cover bg-no-repeat h-50px w-198px",
 
-    btn: "lol hover:text-[#cdfafa] transition-colors relative w-163px h-42px bg-transparent border-none dinamic-bg-borderBtnBlue-svg bg-cover cursor-pointer mr-4px ",
+    btn: "lol hover:text-[#cdfafa] transition-colors relative w-163px h-42px bg-transparent border-none dinamic-bg-borderBtnBlue-svg bg-cover cursor-pointer mr-4px text-[#ffffffde]",
   },
   confirm: {
     "1div": "relative flex justify-center items-center",
@@ -25,10 +25,10 @@ const variants = {
   },
   square: {
     "1div":
-      "w-fit border-2 border-solid bg-origin-border border-transparent bg-clip-border bg-gradient-to-b from-[#C89B3C] to-[#785A28] cursor-pointer hover:brightness-130",
+      "w-fit border-2 border-solid bg-origin-border border-transparent bg-clip-border bg-gradient-to-b from-[#C89B3C] to-[#785A28] cursor-pointer hover:brightness-130 ",
     "2div": "",
     "3div": "",
-    btn: "w-150px h-40px text-base bg-black border-none cursor-pointer",
+    btn: "w-150px h-40px text-base bg-black border-none cursor-pointer text-[#ffffffde]",
   },
 
   cancel: {

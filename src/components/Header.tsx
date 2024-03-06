@@ -10,7 +10,7 @@ function Header({ locationPath }: { locationPath: string }) {
       <Link to={"/difficult"} className="w-fit no-underline">
         <Button children="PLAY" variant="play" playOff={checkLocationPath()} />
       </Link>
-      <h1 className="justify-self-end xl:text-5xl md:text-3xl text-2xl sm:col-start-2 col-start-3 sm:justify-self-center">
+      <h1 className="justify-self-end xl:text-5xl md:text-3xl text-2xl sm:col-start-2 col-start-3 sm:justify-self-center text-[#ffffffde]">
         Memory Legends
       </h1>
     </header>
