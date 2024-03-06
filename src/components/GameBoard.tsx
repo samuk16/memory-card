@@ -130,7 +130,7 @@ function GameBoard() {
   return (
     <>
       <div className="fixed w-full h-full opacity-50 bg-gradient-to-b from-[rgba(0,0,0,0.7)] to-[#000000] z-1"></div>
-      <div className="flex justify-center items-center w-screen sm:h-screen dinamic-bg-bgGameBoard-webp bg-cover bg-fixed bg-left ">
+      <div className="flex justify-center items-center w-screen sm:h-screen dinamic-bg-bgGameBoard-webp bg-cover">
         {loading && <PageLoading variant="l2" />}
         <div className="absolute top-100px right-1/2 translate-x-1/2 w-200px h-68px border-none dinamic-bg-bgBorderSquareXl3-svg bg-contain bg-no-repeat z-10 text-4xl flex items-center justify-center text-[#ffffffde]">
           <p>{counterState + " / " + champions.length}</p>
