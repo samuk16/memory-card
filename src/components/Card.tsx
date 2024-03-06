@@ -1,6 +1,6 @@
 interface CardProps {
   name: string;
-  skinId: string;
+  skinId: number;
   changeSection?: () => void;
   onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }

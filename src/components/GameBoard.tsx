@@ -7,7 +7,7 @@ import { PageLoading } from "./PageLoading";
 import { EndGame } from "./EndGame";
 interface loaderData {
   name: string;
-  skinId: string;
+  skinId: number;
 }
 
 interface victoryState {
@@ -67,7 +67,6 @@ function GameBoard() {
         setArrayState(arrState.add(cardName));
         setCounterState(counterState + 1);
         if (counterState > 0 && counterState + 1 === champions.length) {
-          console.log("ganaste");
           setVictoryStatus({ ...victoryStatus, victory: true });
           setCounterState(0);
 
@@ -75,14 +74,13 @@ function GameBoard() {
         }
       }
     } else {
-      console.log("perdiste");
       setVictoryStatus({ ...victoryStatus, lose: true });
 
       finalResult();
     }
     shuffleArray(champions);
   };
-  function loadImage(name: string, skinId: string): Promise<HTMLImageElement> {
+  function loadImage(name: string, skinId: number): Promise<HTMLImageElement> {
     return new Promise((resolve, reject) => {
       const image = new Image();
       image.onload = () => {
@@ -103,7 +101,6 @@ function GameBoard() {
   );
   Promise.all(imageLoadPromises)
     .then(() => {
-      console.log("Imagenes cargadas");
       setLoading(false);
     })
     .catch((error) => console.log(error));
@@ -152,7 +149,7 @@ function GameBoard() {
             {champions.map((objChampion, index) => (
               <Card
                 name={objChampion.name}
-                skinId={getSkinsState() ? objChampion.skinId : "0"}
+                skinId={getSkinsState() ? objChampion.skinId : 0}
                 key={index}
                 onClick={(e) => handleClick(e)}
               />
