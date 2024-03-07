@@ -35,7 +35,7 @@ function CarouselResponsive() {
 
   return (
     <div className="w-full flex justify-center">
-      <div className="slider-container xl:w-1010px w-350px">
+      <div className="slider-container xl:w-1050px w-350px">
         <Slider {...settings}>
           <a
             href="http://www.leagueoflegends.com/en-us/news/game-updates/patch-13-23-notes/"
