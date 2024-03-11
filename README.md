@@ -1,4 +1,16 @@
-# React + TypeScript + Vite
+<h1 align="center">Memory Card</h1>
+
+![](./src/assets/thumbnail.jpg)
+
+<p align="center">
+  Memory Card - <a href="https://www.theodinproject.com/">The Odin Project</a>
+</p>
+
+## Built with
+   
+- Typescript
+- React
+- Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
